@@ -5,6 +5,29 @@ Created on Wed Apr  4 10:59:32 2018
 @author: Arthur Guillaumin
 This script derives the partitions of a set into pairs. It can be used to
 derive the Isserlis formula.
+
+
+Example: we obtain that (s() autocovariance of the stationary Gaussian process
+X_t):
+E{X_{t}^2 X_{t+t_1}^2 X_{t+t_2}^2 X_{t+t_3}^2}
+=
+s(0)^4  
++  2*s(0)^2s(t_3-t_1)^2  
++  2*s(0)^2s(t_2-t_1)^2  
++  2*s(0)^2s(t_3-t_2)^2  
++  2*s(0)^2s(t_1)^2  
++  2*s(0)^2s(t_3)^2  
++  2*s(0)^2s(t_2)^2  
++  4*s(t_2)^2s(t_3-t_1)^2  
++  4*s(t_2-t_1)^2s(t_3)^2  
++  4*s(t_1)^2s(t_3-t_2)^2  
++  8*s(0)s(t_1)s(t_3-t_1)s(t_3)  
++  8*s(0)s(t_2-t_1)s(t_3-t_2)s(t_3-t_1)  
++  8*s(0)s(t_1)s(t_2-t_1)s(t_2)  
++  8*s(0)s(t_2)s(t_3-t_2)s(t_3)  
++  16*s(t_1)s(t_2)s(t_3-t_2)s(t_3-t_1)  
++  16*s(t_2-t_1)s(t_2)s(t_3-t_1)s(t_3)  
++  16*s(t_1)s(t_2-t_1)s(t_3-t_2)s(t_3) 
 """
 from itertools import permutations
 from collections import OrderedDict
